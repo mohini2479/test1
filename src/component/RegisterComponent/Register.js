@@ -10,13 +10,10 @@ function Register() {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [mobile, setMobile] = useState();
-    const [address, setAddress] = useState();
-    const [gender, setGender] = useState();
-    const [city, setCity] = useState();
 
     const handleSubmit=(evt)=>{
         evt.preventDefault();
-        let userDetails={"name":name,"email":email,"password":password,"mobile":mobile,"address":address,"city":city,"gender":gender};
+        let userDetails={"name":name,"email":email,"password":password,"mobile":mobile};
     
         axios.post(_apiURLUser+"save",userDetails).then((response)=>{
             console.log(response);
@@ -24,8 +21,6 @@ function Register() {
             setName('');
             setEmail('');
             setPassword('');
-            setAddress('');
-            setCity('');
             setMobile('');
           }).catch((err)=>{
             console.log(err);
@@ -63,30 +58,7 @@ function Register() {
                         <input type="mobile" class="form-control" value={mobile} onChange={e=>setMobile(e.target.value)} />
                     </div>
                     
-                    <div class="form-group">
-                        <label for="address">Address:</label>
-                        <input type="address" class="form-control" value={address} onChange={e=>setAddress(e.target.value)} />
-                    </div>
-                    <br/>
-
-                    <div class="form-group">
-                        <label for="city">City:</label>
-                        <select class="form-control" value={city} onChange={e => setCity(e.target.value)} >
-                        <option>Select City</option>
-                        <option>Indore</option>
-                        <option>Ujjain</option>
-                        <option>Bhopal</option>    
-                        </select>
-                    </div>
-                    <br/>
-
-                    <div class="form-group">
-                        <label for="gender">Gender:</label>
-                        Male <input type="radio" value="male" name="gender" onChange={e=>setGender(e.target.value)} />
-
-                        Female <input type="radio" value="female" name="gender" onChange={e=>setGender(e.target.value)}/>
-                    </div>
-
+                    
                     <br/><br/>
                    <button type="submit" class="btn btn-success">Submit</button>
 

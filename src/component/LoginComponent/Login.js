@@ -24,9 +24,6 @@ function Login() {
              localStorage.setItem('email',obj.email);
              localStorage.setItem('password',obj.password);
              localStorage.setItem('mobile',obj.mobile);
-             localStorage.setItem('address',obj.address);
-             localStorage.setItem('city',obj.city);
-             localStorage.setItem('gender',obj.gender);
              localStorage.setItem('role',obj.role);
              localStorage.setItem('status',obj.status);
              localStorage.setItem('info',obj.info);
@@ -41,11 +38,8 @@ function Login() {
             setOutput("Invalide user or varify your account");
             setEmail('');
             setPassword('');
-              })
-    
-      }
-    
-
+              })    
+         }  
   return (
     <div>
         
@@ -53,8 +47,8 @@ function Login() {
     <div class="container-fluid py-6 px-5">
         <div class="row g-5">
             <div class="col-lg-7">
-                <h1 class="display-5 text-uppercase mb-4">Welcome To The <span class="text-primary">RoomRent.Com</span></h1>
-                 <h2>Login page</h2>
+                <h1 class="display-5 text-uppercase mb-4">Login  <span class="text-primary">Page</span></h1>
+                 
                  
                  <font style={{"color": "blue"}}>{output}</font>
                 <form onSubmit={handleSubmit}>
@@ -62,7 +56,8 @@ function Login() {
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" value={email} onChange={e=>setEmail(e.target.value)} />
                     </div>
-
+ 
+                   <br/>
                     <div class="form-group">
                         <label for="password">Password:</label>
                         <input type="password" class="form-control" value={password} onChange={e=>setPassword(e.target.value)} />
@@ -71,14 +66,8 @@ function Login() {
                     <br/><br/>
                    <button type="submit" class="btn btn-success">Submit</button>
                    
-                </form> 
-                
-            </div>
-            <div class="col-lg-5 pb-5" style={{"minHeight": "400px"}}>
-                <div class="position-relative bg-dark-radial h-100 ms-5">
-                    <img class="position-absolute w-100 h-100 mt-5 ms-n5" src="assets/img/about.jpg" style={{"objectFit": "cover"}}/>
-                </div>
-            </div>
+                </form>         
+            </div>         
         </div>
     </div>
     {/* About End */}
