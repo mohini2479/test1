@@ -10,7 +10,6 @@ var app = express();
 
 //to link routes
 import userRouter from './routes/user.router.js';
-import categoryRouter from './routes/category.router.js';
 
 //configuration to manage cors problem
 app.use(cors());
@@ -20,7 +19,6 @@ app.use(bodyParser());
 
 //middleware configuration to load api routes
 app.use("/user",userRouter);
-app.use("/category",categoryRouter);
 
 app.listen(3001);
 console.log("Server invoked at link http://localhost:3001");

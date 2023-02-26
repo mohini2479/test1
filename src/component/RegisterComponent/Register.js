@@ -58,7 +58,6 @@ function Register() {
                         <input type="mobile" class="form-control" value={mobile} onChange={e=>setMobile(e.target.value)} />
                     </div>
                     
-                    
                     <br/><br/>
                    <button type="submit" class="btn btn-success">Submit</button>
 

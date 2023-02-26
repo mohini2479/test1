@@ -31,20 +31,6 @@ const UserSchema = mongoose.Schema({
     minlength:10,
     trim: true
   },
-  address: {
-    type: String,
-    required: [true,"Address is required"],
-    trim: true
-  },
-  city: {
-    type: String,
-    required: [true,"City is required"],
-    trim: true
-  },
-  gender: {
-    type: String,
-    required: [true,"Gender is required"],
-  },
   role: String,
   status: Number,
   info: String
